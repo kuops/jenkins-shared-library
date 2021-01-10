@@ -1,14 +1,8 @@
 def call(String lang) {
     switch (lang) {
         case 'java':
-            javaPipeline();
+            JavaPipeline();
             break;
-        case 'nodejs':
-            nodejsPipeline();
-            break;
-        case 'docs':
-            docsPipeline()
-            break
         default:
             error('not support lang')
     }
