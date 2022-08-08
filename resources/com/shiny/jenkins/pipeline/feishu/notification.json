@@ -1,0 +1,68 @@
+{
+  "config": {
+    "enable_forward": true
+  },
+  "header": {
+    "title": {
+      "tag": "plain_text",
+      "content": "Title"
+    },
+    "template": "green"
+  },
+  "elements": [
+    {
+      "tag": "div",
+      "text": {
+        "tag": "lark_md",
+        "content": "**Git地址：**[Group/Repo](http://)"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "tag": "lark_md",
+        "content": "**Git分支：**Branch"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "tag": "lark_md",
+        "content": "**启动用户：**UserName"
+      }
+    },
+    {
+      "tag": "div",
+      "text": {
+        "tag": "lark_md",
+        "content": "**构建序号：**BuildNumber"
+      }
+    },
+    {
+      "tag": "hr"
+    },
+    {
+      "tag": "action",
+      "actions": [
+        {
+          "tag": "button",
+          "text": {
+            "tag": "plain_text",
+            "content": "更多"
+          },
+          "url": "http://BUILD_URL/console",
+          "type": "default"
+        },
+        {
+          "tag": "button",
+          "text": {
+            "tag": "plain_text",
+            "content": "变更对比"
+          },
+          "url": "http://BUILD_URL/console",
+          "type": "default"
+        }
+      ]
+    }
+  ]
+}
