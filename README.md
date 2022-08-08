@@ -8,9 +8,19 @@ simple jenkins library
 - Request Prometheus metrics
 - Get git variables
 
-## Git variables
+## Variables
 
-- 
+- BUILD_USER
+- GIT_SHORT_COMMIT
+- GIT_PREVIOUS_SHORT_COMMIT
+- GIT_COMMIT_USER
+- GIT_BRANCH_NAME
+- GIT_TAG_NAME
+- GIT_REPO_NAME
+- GIT_HTTPS_URL
+- GIT_GROUP_NAME
+- ANSIBLE_FORCE_COLOR
+- ANSIBLE_HOST_KEY_CHECKING
 
 ## Usage 
 
@@ -61,33 +71,12 @@ pipeline {
                 }
             }
         }
-
-        stage('Ansible Deploy') {
-            steps {
-                sshagent(['ansible-ssh']) {
-                    script {
-                        if (env.HOST_IP) {
-                            sh "ansible-playbook -i ${HOST_IP}, -e 'target=${HOST_IP}' playbooks/jenkins/clean_kube_node_logs.yml"
-                        } else {
-                            currentBuild.result = 'ABORTED'
-                            env.ERROR_MESSAGE = '未传递 HOST_IP 参数'
-                            echo(env.ERROR_MESSAGE)
-                        }
-                    }
-                }
-            }
-        }
     }
 
     post {
         success {
             script {
                 notification("green")
-            }
-        }
-        failure {
-            script {
-                notification("red")
             }
         }
     }
