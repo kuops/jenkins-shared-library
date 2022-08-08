@@ -1,0 +1,13 @@
+{
+  "config": {
+    "enable_forward": true
+  },
+  "header": {
+    "title": {
+      "tag": "plain_text",
+      "content": "Title"
+    },
+    "template": "Color"
+  },
+  "elements": []
+}
